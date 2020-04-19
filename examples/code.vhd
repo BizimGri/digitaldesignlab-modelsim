@@ -1,0 +1,34 @@
+-----------------------------------------------------------------------
+-- VHDL for 16-1 MUX as 8 bit inputs
+-- Burhan SEHER
+-----------------------------------------------------------------------
+Library IEEE;
+Use IEEE.std_logic_1164.all;
+
+Entity mux16_1 IS
+PORT(I1,I2,I3,I4,I5,I6,I7,I8,I9,I10,I11,I12,I13,I14,I15,I16: IN std_logic_vector(7 downto 0);
+	S: IN std_logic_vector(3 downto 0);
+	O: OUT std_logic_vector(7 downto 0));
+End mux16_1;
+
+Architecture Behv of mux16_1 IS
+Begin
+O <= 	I1 WHEN S="0000" ELSE
+	I2 WHEN S="0001" ELSE
+	I3 WHEN S="0010" ELSE
+	I4 WHEN S="0011" ELSE
+	I5 WHEN S="0100" ELSE
+	I6 WHEN S="0101" ELSE
+	I7 WHEN S="0110" ELSE
+	I8 WHEN S="0111" ELSE
+	I9 WHEN S="1000" ELSE
+	I10 WHEN S="1001" ELSE
+	I11 WHEN S="1010" ELSE
+	I12 WHEN S="1011" ELSE
+	I13 WHEN S="1100" ELSE
+	I14 WHEN S="1101" ELSE
+	I15 WHEN S="1110" ELSE
+	I16 WHEN S="1111" ELSE
+	"XXXX";
+
+End Behv;
